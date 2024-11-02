@@ -202,6 +202,7 @@ elif page == "Contact Us":
         
         - **Email**: student01400@srdav.onmicrosoft.com
         - **Phone**: +91 78380 29059
+        - **Instagram**: https://www.instagram.com/stockai.tech
         
-        You can also reach out to us on our social media account.
+        You can reach out to us on any of the platforms mentioned above.
     """)
