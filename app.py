@@ -10,9 +10,9 @@ from io import BytesIO
 # Set the title and favicon
 st.set_page_config(page_title="StockAI", page_icon="favicon.png")
 
-# Sidebar navigation
+# Sidebar navigation with added pages
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Predict", "Train Model"])
+page = st.sidebar.radio("Go to", ["Predict", "Train Model", "About Us", "Contact Us"])
 
 # Global variables
 model = None
@@ -122,6 +122,15 @@ if page == "Predict":
         except Exception as e:
             st.error(f"An error occurred: {e}")
 
+    # Disclaimer for the Predict page only
+    st.markdown("---")
+    st.markdown(
+        '<div style="text-align: center; background-color: yellow; color: black; padding: 10px; border-radius: 5px;">'
+        "DISCLAIMER - This website should be solely used for education purposes, and any of the person in the core development team should not be held responsible for any financial loss incurred (if any), due to this application."
+        '</div>',
+        unsafe_allow_html=True
+    )
+
 # Page: Train Model
 elif page == "Train Model":
     st.title("StockAI - Train Model")
@@ -168,3 +177,31 @@ elif page == "Train Model":
 
         except Exception as e:
             st.error(f"An error occurred: {e}")
+
+# Page: About Us
+elif page == "About Us":
+    st.title("About StockAI")
+    st.write("""
+        StockAI is a machine learning-driven application designed to provide predictions on stock price trends. 
+        Our mission is to offer educational tools that help users understand financial forecasting and data analysis, using the power of Artificial Intelligence.
+        
+        **Core Development Team**:
+        - **Divyansh Balooni**: Project Lead
+        - **Vihaan Tomar**: Data Manager
+        - **Kartik Sharma**: Tech Lead
+        
+        We are committed to making financial analysis accessible and understandable for everyone. 
+        If you have any feedback or questions, please don't hesitate to reach out!
+    """)
+
+# Page: Contact Us
+elif page == "Contact Us":
+    st.title("Contact Us")
+    st.write("""
+        We'd love to hear from you! For any inquiries, feedback, or support, feel free to get in touch with us:
+        
+        - **Email**: student01400@srdav.onmicrosoft.com
+        - **Phone**: +91 78380 29059
+        
+        You can also reach out to us on our social media account.
+    """)
