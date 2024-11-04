@@ -10,9 +10,29 @@ from io import BytesIO
 # Set the title and favicon
 st.set_page_config(page_title="StockAI", page_icon="favicon.png")
 
-# Sidebar navigation with added pages
+# Display the logo in the header
+logo_path = "logo.png"  # Adjust the path if necessary
+st.image(logo_path, width=200)  # Set the desired width
+
+# Sidebar navigation with buttons instead of radio buttons
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Predict", "Train Model", "About Us", "Contact Us"])
+
+# Initialize session state to track the current page
+if "page" not in st.session_state:
+    st.session_state.page = "About Us"
+
+# Sidebar buttons for navigation
+if st.sidebar.button("About Us"):
+    st.session_state.page = "About Us"
+if st.sidebar.button("Train Model"):
+    st.session_state.page = "Train Model"
+if st.sidebar.button("Upload & Predict"):
+    st.session_state.page = "Predict"
+if st.sidebar.button("Contact Us"):
+    st.session_state.page = "Contact Us"
+
+# Set page variable based on session state
+page = st.session_state.page
 
 # Global variables
 model = None
@@ -43,7 +63,7 @@ def predict_future(model, last_data, steps, scaler):
 
 # Page: Predict
 if page == "Predict":
-    st.title("StockAI - Prediction")
+    st.title("Prediction")
 
     # File upload for model and CSV
     model_file = st.file_uploader("Upload your .pkl model file", type='pkl')
@@ -121,19 +141,19 @@ if page == "Predict":
 
         except Exception as e:
             st.error(f"An error occurred: {e}")
-
     # Disclaimer for the Predict page only
     st.markdown("---")
     st.markdown(
-        '<div style="text-align: center; background-color: yellow; color: black; padding: 10px; border-radius: 5px;">'
-        "DISCLAIMER - This website should be solely used for education purposes, and any of the person in the core development team should not be held responsible for any financial loss incurred (if any), due to this application."
-        '</div>',
+    '<div style="text-align: center; background-color: yellow; color: black; padding: 10px; border-radius: 5px;">'
+    "<b>DISCLAIMER</b> - This website is intended for educational purposes only and should not be used for financial decision-making."
+    '</div>',
         unsafe_allow_html=True
     )
 
+
 # Page: Train Model
 elif page == "Train Model":
-    st.title("StockAI - Train Model")
+    st.title("Train Model")
 
     # File upload for CSV
     csv_file = st.file_uploader("Upload your CSV data file for training", type='csv')
@@ -180,7 +200,7 @@ elif page == "Train Model":
 
 # Page: About Us
 elif page == "About Us":
-    st.title("About StockAI")
+    st.title("About Us")
     st.write("""
         StockAI is a machine learning-driven application designed to provide predictions on stock price trends. 
         Our mission is to offer educational tools that help users understand financial forecasting and data analysis, using the power of Artificial Intelligence.
@@ -200,9 +220,10 @@ elif page == "Contact Us":
     st.write("""
         We'd love to hear from you! For any inquiries, feedback, or support, feel free to get in touch with us:
         
-        - **Email**: student01400@srdav.onmicrosoft.com
+        - **Email**: support@stockai.tech
         - **Phone**: +91 78380 29059
         - **Instagram**: https://www.instagram.com/stockai.tech
+        - **Linkedin**: https://www.linkedin.com/stockai.tech
         
         You can reach out to us on any of the platforms mentioned above.
     """)

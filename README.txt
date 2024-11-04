@@ -48,14 +48,14 @@ For any queries or feedback, kindly contact our team,
 Divyansh Balooni
 (Project Head)
 +91 78380 29059
-student01400@srdav.onmicrosoft.com
+divyanshbalooni@stockai.tech
 
 Vihaan Tomar
 (Data manager)
 +91 85058 82470
-student01390@srdav.onmicrosoft.com
+vihaantomar@stockai.tech
 
 Kartik Sharma
 (Tech Lead)
 +91 98117 81709
-student01392@srdav.onmicrosoft.com
+kartiksharma@stockai.tech
