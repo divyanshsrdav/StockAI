@@ -39,7 +39,7 @@ Note:
 StockAI's predictions are based on historical data and AI can make some mistakes while processing the data.
 
 *********************************************************************************************************************************************************************************************************************************
-***DISCLAIMER - This website should be solely used for education purposes, and any of the person in the core development team should not be held responsible for any financial loss incurred (if any), due to this application***
+***DISCLAIMER -  This website is intended for educational purposes only and should not be used for financial decision-making.***
 *********************************************************************************************************************************************************************************************************************************
 
 Contact Information:
