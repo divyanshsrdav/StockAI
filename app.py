@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from io import BytesIO
 
 # Set the title and favicon
-st.set_page_config(page_title="StockAI", page_icon="favicon.png")
+st.set_page_config(page_title="StockAI - AI-Powered Stock Market Predictions", page_icon="favicon.png")
 
 # Display the logo in the header
 logo_path = "logo.png"  # Adjust the path if necessary
