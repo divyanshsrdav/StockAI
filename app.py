@@ -14,6 +14,26 @@ st.set_page_config(page_title="StockAI", page_icon="favicon.png")
 logo_path = "logo.png"  # Adjust the path if necessary
 st.image(logo_path, width=200)  # Set the desired width
 
+# Add meta tags for SEO
+st.markdown("""
+    <head>
+        <title>StockAI - AI-Powered Stock Market Predictions</title>
+        <meta name="description" content="StockAI provides AI-driven stock market predictions, trends, and insights to help investors make informed decisions.">
+        <meta name="keywords" content="AI, stock market predictions, financial technology, machine learning, investing">
+        <meta property="og:title" content="StockAI - AI-Powered Stock Market Predictions">
+        <meta property="og:description" content="Discover AI-driven insights and predictions for the stock market with StockAI.">
+        <meta property="og:image" content="https://stockai.tech/images/stockai-logo.png">
+        <meta property="og:url" content="https://www.stockai.tech">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="StockAI - AI-Powered Stock Market Predictions">
+        <meta name="twitter:description" content="Explore StockAI's AI-driven predictions and insights for smarter investing.">
+        <meta name="twitter:image" content="https://stockai.tech/images/stockai-logo.png">
+        <meta name="twitter:url" content="https://www.stockai.tech">
+        <link rel="canonical" href="https://www.stockai.tech">
+    </head>
+""", unsafe_allow_html=True)
+
 # Sidebar navigation with buttons instead of radio buttons
 st.sidebar.title("Navigation")
 
@@ -76,7 +96,7 @@ if page == "Predict":
         try:
             # Read the CSV file
             data = pd.read_csv(csv_file, date_parser=True)
-            data['Date'] = pd.to_datetime(data['Date'], format='%m/%d/%Y')
+            data['Date'] = pd.to_datetime(data['Date'], format='%d-%m-%Y')
             data.set_index('Date', inplace=True)
             data = data[['Close']]
 
@@ -162,7 +182,7 @@ elif page == "Train Model":
         try:
             # Read CSV file
             data = pd.read_csv(csv_file, date_parser=True)
-            data['Date'] = pd.to_datetime(data['Date'], format='%m/%d/%Y')
+            data['Date'] = pd.to_datetime(data['Date'], format='%m-%d-%Y')
             data.set_index('Date', inplace=True)
             data = data[['Close']]
 
@@ -223,7 +243,6 @@ elif page == "Contact Us":
         - **Email**: support@stockai.tech
         - **Phone**: +91 78380 29059
         - **Instagram**: https://www.instagram.com/stockai.tech
-        - **Linkedin**: https://www.linkedin.com/stockai.tech
-        
+
         You can reach out to us on any of the platforms mentioned above.
     """)
