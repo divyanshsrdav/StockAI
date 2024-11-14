@@ -182,7 +182,7 @@ elif page == "Train Model":
         try:
             # Read CSV file
             data = pd.read_csv(csv_file, date_parser=True)
-            data['Date'] = pd.to_datetime(data['Date'], format='%m-%d-%Y')
+            data['Date'] = pd.to_datetime(data['Date'], format='%d-%m-%Y')
             data.set_index('Date', inplace=True)
             data = data[['Close']]
 

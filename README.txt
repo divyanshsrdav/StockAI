@@ -2,14 +2,6 @@ README.txt
 
 Project Name: StockAI
 
-Creators:
-
-Divyansh Balooni,
-Vihaan Tomar,
-Kartik Sharma,
-of,
-(Class: XII-A)
-
 Official Website: https://stockai.tech
 __________________________________________________________________________________
 
@@ -46,16 +38,16 @@ Contact Information:
 For any queries or feedback, kindly contact our team, 
 
 Divyansh Balooni
-(Project Head)
+(Project Lead)
 +91 78380 29059
-divyanshbalooni@stockai.tech
+student01400@srdav.onmicrosoft.com
 
 Vihaan Tomar
 (Data manager)
 +91 85058 82470
-vihaantomar@stockai.tech
+student1390@srdav.onmicrosoft.com
 
 Kartik Sharma
 (Tech Lead)
 +91 98117 81709
-kartiksharma@stockai.tech
+student01392@srdav.onmicrosoft.com
