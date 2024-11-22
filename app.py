@@ -44,9 +44,11 @@ if "page" not in st.session_state:
 # Sidebar buttons for navigation
 if st.sidebar.button("About Us"):
     st.session_state.page = "About Us"
+if st.sidebar.button("Data"):
+    st.session_state.page = "Data"
 if st.sidebar.button("Train Model"):
     st.session_state.page = "Train Model"
-if st.sidebar.button("Upload & Predict"):
+if st.sidebar.button("Prediction"):
     st.session_state.page = "Predict"
 if st.sidebar.button("Contact Us"):
     st.session_state.page = "Contact Us"
@@ -245,4 +247,36 @@ elif page == "Contact Us":
         - **Instagram**: https://www.instagram.com/stockai.tech
 
         You can reach out to us on any of the platforms mentioned above.
+    """)
+
+# Page: Data
+elif page == "Data":
+    st.title("Data")
+    st.write("""
+        Here you can explore and analyze the raw or preprocessed data used for training and predictions. 
+        Understanding the data is essential for creating effective models and making informed decisions.
+        
+        ### About StockDRIVE:
+        StockDRIVE is an advanced, AI-based data library developed by team **StockAI**. It provides curated datasets optimized for financial forecasting and machine learning applications. With StockDRIVE, you can:
+        - Access pre-cleaned, ready-to-use stock market data.
+        - Explore data enriched with AI-driven insights and features.
+        - Download datasets in various formats tailored for modeling.
+
+        Visit [StockDRIVE](https://drive.stockai.tech) to explore our exclusive datasets and supercharge your financial predictions.
+
+        ### Other data sources:
+        Here are some reliable sources for downloading historical stock market and financial data:
+        - [**Kaggle**](https://www.kaggle.com): A platform offering a wide variety of datasets, including stock market data, economic indicators, and financial statistics.
+        - [**Yahoo Finance**](https://finance.yahoo.com): Provides historical stock prices, financial news, and real-time data feeds.
+        - [**Quandl**](https://www.quandl.com): Offers premium financial data APIs and stock market datasets.
+        - [**Alpha Vantage**](https://www.alphavantage.co): A popular platform for free APIs to access stock prices, forex, and cryptocurrency data.
+
+        ### Supported File Format:
+        StockAI currently supports only **CSV (Comma-Separated Values)** files. Ensure your data follows these guidelines for compatibility:
+        - **Required Columns:** `Date`, `Open`, `High`, `Low`, `Close`, `Volume`.
+        - **Date Format:** `MM/DD/YYYY` (e.g., 12/31/2023).
+        - **Data Integrity:** All columns must have complete, non-null values for accurate predictions.
+
+        Files that do not meet these requirements may cause errors during processing. Please format your data accordingly before uploading.
+
     """)
